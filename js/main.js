@@ -4,17 +4,17 @@ function getRandomInt (min,max) {
   max = Math.floor(max);
 
   if (max <= min || min<0) {
-    return('Функциия не может быть выполнена')
+    return('Функциия не может быть выполнена');
   }
 
   return Math.floor(Math.random() * (max-min)) + min;
 }
-console.log(getRandomInt(0,100));
+// console.log(getRandomInt(0,100));
 //Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
 function getRandom(min, max, fixed=0) {
   if (max <= min || min<0) {
-    return('Функциия не может быть выполнена')
+    return('Функциия не может быть выполнена');
   }
   return Math.random().toFixed(fixed) * (max - min) + min;
 }
-console.log(getRandom(0,100,2));
+// console.log(getRandom(0,100,2));
