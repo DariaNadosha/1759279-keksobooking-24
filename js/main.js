@@ -9,6 +9,7 @@ function getRandomInt (min,max) {
 
   return Math.floor(Math.random() * (max-min)) + min;
 }
+getRandomInt(0,100);
 // console.log(getRandomInt(0,100));
 //Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
 function getRandom(min, max, fixed=0) {
@@ -17,4 +18,5 @@ function getRandom(min, max, fixed=0) {
   }
   return Math.random().toFixed(fixed) * (max - min) + min;
 }
-// console.log(getRandom(0,100,2));
+getRandom(0,100,2);
+  // console.log(getRandom(0,100,2));
