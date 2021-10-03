@@ -19,4 +19,4 @@ function getRandom(min, max, fixed=0) {
   return Math.random().toFixed(fixed) * (max - min) + min;
 }
 getRandom(0,100,2);
-  // console.log(getRandom(0,100,2));
+// console.log(getRandom(0,100,2));
