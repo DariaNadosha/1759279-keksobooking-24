@@ -41,7 +41,7 @@ const createArray  = (array) => {
     }
   }
   return newArray;
-}
+};
 
 const AVATAR = [
   'img/avatars/user01.png',
@@ -56,7 +56,6 @@ const AVATAR = [
   'img/avatars/user10.png',
 ];
 const TITLE = 'Идеальное предложение!';
-const ADDRESS = '{{location.lat}}, {{location.lng}}';
 const TYPE = [
   'palace',
   'flat',
@@ -105,13 +104,13 @@ const createSingleOffer = () => {
       photos: createArray (PHOTOS),
     },
     location: location,
-  }
-}
+  };
+};
 //console.log(createSingleOffer());
 
 const AMOUNT_OF_OBJECTS = 10;
 const varietiesOfBooking = Array.from(
   {length: AMOUNT_OF_OBJECTS}, createSingleOffer
   );
-
+varietiesOfBooking;
 //console.log(varietiesOfBooking);
