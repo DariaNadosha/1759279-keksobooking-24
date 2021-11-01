@@ -76,10 +76,10 @@ const createSingleOffer = () => {
 };
 //console.log(createSingleOffer());
 
-const AMOUNT_OF_OBJECTS = 10;
-const varietiesOfBooking = Array.from(
-  {length: AMOUNT_OF_OBJECTS}, createSingleOffer,
+export const createVarietiesOfBooking = (amount) => Array.from(
+  {length: amount}, createSingleOffer,
 );
-varietiesOfBooking;
+
+const varietiesOfBooking = createVarietiesOfBooking(10);
 
 export {varietiesOfBooking};
