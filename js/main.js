@@ -1,2 +1,3 @@
-import './create-data';
+import './data';
+
 
