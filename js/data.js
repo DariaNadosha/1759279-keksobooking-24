@@ -1,3 +1,5 @@
+import {getRandomInt, getRandom, getRandomElement, createArray} from './util.js';
+
 const AVATAR = [
   'img/avatars/user01.png',
   'img/avatars/user02.png',
@@ -37,6 +39,47 @@ const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
+function getPrice (min,max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return (max <= min || min<0) ? 'Функция не может быть выполнена'
+    :Math.floor(((Math.random() * (max-min)) + min)/500)*500;
+}
+getPrice(1000, 50000);
 
+const createLocation = () => ({
+  lat: getRandom (35.65, 35.7),
+  lng: getRandom (139.7, 139.8),
+});
 
-export {AVATAR, TITLE, TYPE, CHECKIN_CHECKOUT, FEATURES, DESCRIPTION, PHOTOS };
+const createSingleOffer = () => {
+  const location = createLocation();
+  return{
+    author: {
+      avatar: getRandomElement(AVATAR),
+    },
+    offer: {
+      title: TITLE,
+      address: `${location.lat} ${location.lng}`,
+      price: getPrice(1000,50000),
+      type: getRandomElement (TYPE),
+      rooms: getRandomInt(1,5),
+      guests: getRandomInt(1,8),
+      checkin: getRandomElement (CHECKIN_CHECKOUT),
+      checkout: getRandomElement (CHECKIN_CHECKOUT),
+      features: createArray (FEATURES),
+      description: DESCRIPTION,
+      photos: createArray (PHOTOS),
+    },
+    location: location,
+  };
+};
+//console.log(createSingleOffer());
+
+const AMOUNT_OF_OBJECTS = 10;
+const varietiesOfBooking = Array.from(
+  {length: AMOUNT_OF_OBJECTS}, createSingleOffer,
+);
+varietiesOfBooking;
+
+export {varietiesOfBooking};
