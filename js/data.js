@@ -83,3 +83,4 @@ export const createVarietiesOfBooking = (amount) => Array.from(
 const varietiesOfBooking = createVarietiesOfBooking(10);
 
 export {varietiesOfBooking};
+
